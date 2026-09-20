@@ -13,12 +13,16 @@ import java.time.LocalTime
 class Schedule {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var id: Long? = null
+    @Column(name = "id_schedule", unique = true, nullable = false)
+    var idSchedule: Long? = null
 
     @Column(name = "opening_time", nullable = false)
     var openingTime: LocalTime? = null
 
     @Column(name = "closing_time", nullable = false)
     var closingTime: LocalTime? = null
+
+    @Column(name = "status", nullable = false)
+    var status: String? = null
 
 }
