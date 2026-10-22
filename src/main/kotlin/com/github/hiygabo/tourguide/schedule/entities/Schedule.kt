@@ -16,18 +16,18 @@ class Schedule(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_schedule", unique = true, nullable = false)
-    val idSchedule: Long? = null,
+    var idSchedule: Long? = null,
 
     @Column(name = "opening_time", nullable = false)
-    val openingTime: LocalTime? = null,
+    var openingTime: LocalTime? = null,
 
     @Column(name = "closing_time", nullable = false)
-    val closingTime: LocalTime? = null,
+    var closingTime: LocalTime? = null,
 
     @Column(name = "status", nullable = false)
-    val status: String? = null,
+    var status: String? = null,
 
     @OneToOne( mappedBy = "schedule")
-    val point: TouristPoint? = null,
+    var point: TouristPoint? = null,
 
 )
