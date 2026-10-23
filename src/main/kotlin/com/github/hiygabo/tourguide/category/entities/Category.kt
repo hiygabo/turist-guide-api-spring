@@ -12,15 +12,15 @@ import jakarta.persistence.Table
 
 @Entity
 @Table(name = "CATEGORY")
-class Category {
+class Category (
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name= "id_category", unique = true, nullable = false)
-    var idCategory: Long? = null
+    var idCategory: Long? = null,
 
     @Column(name = "category_name", unique = true, nullable = false)
-    var categoryName: String? = null
+    var categoryName: String? = null,
 
     @OneToMany(mappedBy = "category")
     val points: List<TouristPoint> = mutableListOf()
-}
+)
