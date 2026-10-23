@@ -1,6 +1,7 @@
 package com.github.hiygabo.tourguide.tourist_point.entities
 
 import com.github.hiygabo.tourguide.category.entities.Category
+import com.github.hiygabo.tourguide.review.entities.Review
 import com.github.hiygabo.tourguide.schedule.entities.Schedule
 import com.github.hiygabo.tourguide.tour.entities.Tour
 import jakarta.persistence.Entity
@@ -43,8 +44,9 @@ class TouristPoint (
     var tourAsOrigin: MutableList<Tour> = mutableListOf(),
 
     @OneToMany (mappedBy = "destinyPoint")
-    var tourAsDestiny: MutableList<Tour> = mutableListOf()
+    var tourAsDestiny: MutableList<Tour> = mutableListOf(),
 
-
+    @OneToMany (mappedBy = "review")
+    var reviews: MutableList<Review> = mutableListOf()
 
 )
