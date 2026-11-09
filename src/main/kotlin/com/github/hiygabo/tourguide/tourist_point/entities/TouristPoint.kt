@@ -47,10 +47,10 @@ class TouristPoint (
     @OneToMany (mappedBy = "destinyPoint")
     var tourAsDestiny: MutableList<Tour> = mutableListOf(),
 
-    @OneToMany (mappedBy = "review")
+    @OneToMany (mappedBy = "touristPoint")
     var reviews: MutableList<Review> = mutableListOf(),
 
-    @OneToMany (mappedBy = "favorite")
+    @OneToMany (mappedBy = "touristPoint")
     var favorites: MutableList<Favorite> = mutableListOf()
 
 )

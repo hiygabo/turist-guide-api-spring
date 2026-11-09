@@ -1,6 +1,7 @@
 package com.github.hiygabo.tourguide.favorite.entities
 
 import com.github.hiygabo.tourguide.tourist_point.entities.TouristPoint
+import com.github.hiygabo.tourguide.user.entities.User
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.FetchType
@@ -26,5 +27,9 @@ class Favorite (
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn( name = "id_tourist_point")
     var touristPoint: TouristPoint? = null,
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn( name = "id_user")
+    var user: User? = null
 
     )
