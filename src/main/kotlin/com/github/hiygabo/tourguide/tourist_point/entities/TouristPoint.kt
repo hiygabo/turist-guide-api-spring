@@ -1,6 +1,7 @@
 package com.github.hiygabo.tourguide.tourist_point.entities
 
 import com.github.hiygabo.tourguide.category.entities.Category
+import com.github.hiygabo.tourguide.favorite.entities.Favorite
 import com.github.hiygabo.tourguide.review.entities.Review
 import com.github.hiygabo.tourguide.schedule.entities.Schedule
 import com.github.hiygabo.tourguide.tour.entities.Tour
@@ -47,6 +48,9 @@ class TouristPoint (
     var tourAsDestiny: MutableList<Tour> = mutableListOf(),
 
     @OneToMany (mappedBy = "review")
-    var reviews: MutableList<Review> = mutableListOf()
+    var reviews: MutableList<Review> = mutableListOf(),
+
+    @OneToMany (mappedBy = "favorite")
+    var favorites: MutableList<Favorite> = mutableListOf()
 
 )
