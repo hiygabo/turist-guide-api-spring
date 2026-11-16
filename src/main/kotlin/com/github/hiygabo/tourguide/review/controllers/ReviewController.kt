@@ -2,6 +2,7 @@ package com.github.hiygabo.tourguide.review.controllers
 
 import com.github.hiygabo.tourguide.review.entities.Review
 import com.github.hiygabo.tourguide.review.services.ReviewService
+import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController
 class ReviewController (
     val reviewService: ReviewService
 ){
+    @GetMapping
     fun getReviews(): List<Review>{
         return reviewService.getReviews()
     }
